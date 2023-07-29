@@ -2,21 +2,25 @@ import compression from "compression";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
-import express, { Express } from "express";
+import express, { Express, NextFunction, Request, Response } from "express";
 import ExpressMongoSanitize from "express-mongo-sanitize";
 import expressSession from "express-session";
 import helmet from "helmet";
 import hpp from "hpp";
 import http from "http";
-// import "module-alias/register";
 import morgan from "morgan";
 import path from "path";
-// import "tsconfig-paths/register";
 
 import connect from "@/db";
-import { authRouter } from "./routes";
+import HttpException from "@/libs/http-exception";
+import ErrorHandler from "@/middlewares/http-exception";
+import { authRouter, newsRouter, noticeRouter } from "@/routes";
 
 dotenv.config();
+// const redisClient = createClient({
+//   url: `redis://${process.env.REDIS_HOST}`,
+//   password: process.env.REDIS_PASSWORD,
+// });
 
 const app: Express = express();
 const isProd: boolean = process.env.NODE_ENV === "production";
@@ -59,6 +63,7 @@ app.use(
     name: process.env.COOKIE_NAME || "SSID",
     secret: process.env.COOKIE_SECRET || "secret",
     proxy: true,
+    // store: new RedisStore({ client: redisClient }),
     cookie: {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24 * 7,
@@ -69,6 +74,18 @@ app.use(
 );
 
 app.use("/auth", authRouter);
+app.use("/notice", noticeRouter);
+app.use("/news", newsRouter);
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const error = new HttpException(
+    `${req.method} ${req.url} 라우터가 없습니다.`,
+    404
+  );
+  next(error);
+});
+
+app.use(ErrorHandler);
 
 const server = http.createServer(app);
 

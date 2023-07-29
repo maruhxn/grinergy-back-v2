@@ -1,0 +1,1234 @@
+2023-07-29 20:50:30 [UserService] error: Error: GET /user/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:50:41 [UserService] error: Error: GET /user/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:50:53 [UserService] error: Error: GET /auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:47:12)
+2023-07-29 20:54:09 [UserService] error: Error: GET /auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:47:12)
+2023-07-29 20:54:10 [UserService] error: Error: GET /auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:47:12)
+2023-07-29 20:54:17 [UserService] error: Error: GET /auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:646:15
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:265:14)
+    at Function.handle (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:47:12)
+2023-07-29 20:55:44 [UserService] error: Error: GET /api/notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:55:44 [UserService] error: Error: GET /api/user/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:55:46 [UserService] error: Error: POST /api/user/logout 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:55:48 [UserService] error: Error: GET /api/notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:55:49 [UserService] error: Error: GET /api/user/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:55:49 [UserService] error: Error: GET /api/user/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:55:53 [UserService] error: Error: POST /api/user/login 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:57:14 [UserService] error: Error: GET /api/user/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:57:17 [UserService] error: Error: POST /login 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:57:50 [UserService] error: Error: GET /api/user/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:57:51 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:57:54 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:57:58 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:57:59 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:58:01 [UserService] error: Error: POST /login 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:58:23 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:58:24 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:58:28 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:81:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 20:58:31 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as set] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.set (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:24:34)
+    at RedisStore.set (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:71:39)
+    at Session.save (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\session\session.js:72:25)
+    at Session.save (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:406:15)
+    at ServerResponse.end (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:335:21)
+    at ServerResponse.send (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\response.js:232:10)
+    at ServerResponse.json (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\response.js:278:15)
+2023-07-29 20:58:31 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:36 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:36 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:36 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:41 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:41 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:46 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:48 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:49 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:49 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:55 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:57 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:58:58 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 20:59:02 [UserService] error: Error: The client is closed
+    at Commander._RedisClient_sendCommand (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:490:31)
+    at Commander.commandsExecutor (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\client\index.js:188:154)
+    at Commander.BaseClass.<computed> [as get] (C:\Users\asus\Project\grinergy-server-ts\node_modules\@redis\client\dist\lib\commander.js:8:29)
+    at Object.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:20:34)
+    at RedisStore.get (C:\Users\asus\Project\grinergy-server-ts\node_modules\connect-redis\dist\cjs\index.js:53:42)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:485:11)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+2023-07-29 21:00:04 [UserService] error: Error: GET /r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:04 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:10 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:16 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:21 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:29 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:31 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:31 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:34 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:42 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:44 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:53 [UserService] error: Error: GET /r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:53 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:54 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:58 [UserService] error: Error: GET /r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:58 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:00:59 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:01:04 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:01:14 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:01:44 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:01:47 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:01:47 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:01:58 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:02:10 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:02:15 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:02:26 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:00 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:01 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:10 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:11 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:15 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at session (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:479:7)
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+2023-07-29 21:03:18 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:27 [UserService] error: Error: GET /r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:27 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:28 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:37 [UserService] error: Error: GET /r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:38 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:39 [UserService] error: Error: GET /r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:03:39 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:04:07 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:04:16 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:04:17 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:04:21 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:04:41 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:04:42 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:04:46 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:04:52 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:06 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:14 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:18 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:23 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:26 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:33 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:37 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:50 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:52 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:05:57 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:06:06 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:06:16 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:06:18 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:07:37 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:07:43 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:08:33 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:08:35 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:08:42 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:08:45 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:08:54 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:09:34 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:09:38 [UserService] error: Error: Unauthorized
+    at validateAdmin (C:\Users\asus\Project\grinergy-server-ts\src\controllers\auth.controller.ts:15:11)
+    at C:\Users\asus\Project\grinergy-server-ts\src\libs\catch-async.ts:8:13
+    at Generator.next (<anonymous>)
+    at C:\Users\asus\Project\grinergy-server-ts\src\libs\catch-async.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\asus\Project\grinergy-server-ts\src\libs\catch-async.ts:4:12)
+    at C:\Users\asus\Project\grinergy-server-ts\src\libs\catch-async.ts:6:63
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\route.js:144:13)
+    at isNotLoggedIn (C:\Users\asus\Project\grinergy-server-ts\src\middlewares\auth.guard.ts:14:5)
+2023-07-29 21:09:39 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:09:50 [UserService] error: Error: GET /admin/r/auth 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:10:48 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:10:51 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:11:39 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:11:43 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:11:44 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:11:55 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:12:06 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:12:14 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:12:20 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:13:29 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:13:35 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:13:37 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:15:45 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:15:50 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:15:50 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:16:01 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:16:08 [UserService] error: Error: GET /notice?page=1 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)
+2023-07-29 21:16:09 [UserService] error: Error: POST /logout 라우터가 없습니다.
+    at C:\Users\asus\Project\grinergy-server-ts\src\app.ts:79:17
+    at Layer.handle [as handle_request] (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\asus\Project\grinergy-server-ts\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\asus\Project\grinergy-server-ts\node_modules\express-session\index.js:506:7)
+    at processImmediate (node:internal/timers:478:21)

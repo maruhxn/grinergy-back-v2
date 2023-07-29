@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\asus\\Project\\grinergy-server-ts\\logs\\.99906aeecc00e69f8b6814719cf2de34939f444a-audit.json",
+    "files": [
+        {
+            "date": 1690565284519,
+            "name": "C:\\Users\\asus\\Project\\grinergy-server-ts\\logs\\$DATE%.error.log.2023-07-29",
+            "hash": "3d96d243f63ec1081b6c5c9dade81029255ff7486707702805be1b818ec1c758"
+        }
+    ],
+    "hashType": "sha256"
+}

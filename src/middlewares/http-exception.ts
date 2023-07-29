@@ -1,9 +1,9 @@
-import HttpException from "@/lib/http-exception";
+import HttpException from "@/libs/http-exception";
 import logger from "@/logger";
 import { NextFunction, Request, Response } from "express";
 import { MulterError } from "multer";
 
-const errHandler = (
+const ErrorHandler = (
   err: any,
   req: Request,
   res: Response,
@@ -32,4 +32,4 @@ const errHandler = (
   }
 };
 
-export default errHandler;
+export default ErrorHandler;

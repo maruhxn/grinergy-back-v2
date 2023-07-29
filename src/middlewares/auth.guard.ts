@@ -1,4 +1,4 @@
-import HttpException from "@/lib/http-exception";
+import HttpException from "@/libs/http-exception";
 import { RequestHandler } from "express";
 
 export const isLoggedIn: RequestHandler = (req, res, next) => {
