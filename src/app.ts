@@ -18,6 +18,13 @@ import ErrorFilter from "@/middlewares/error.filter";
 import { authRouter, newsRouter, noticeRouter } from "@/routes";
 import RedisStore from "connect-redis";
 
+declare module "express-session" {
+  interface SessionData {
+    isValid: boolean;
+    ip: string;
+  }
+}
+
 dotenv.config();
 
 const app: Express = express();

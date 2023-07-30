@@ -43,7 +43,7 @@ export const logout = (
   res: TypedResponse<void>,
   next: NextFunction
 ) => {
-  req.session.destroy((err) => {
+  req.session.destroy((err: any) => {
     if (err) next(err);
     return res.status(201).json({
       ok: true,
