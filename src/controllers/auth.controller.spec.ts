@@ -25,7 +25,7 @@ beforeEach(() => {
 });
 
 describe("login", () => {
-  describe("if the KEY is valid", () => {
+  describe("key가 올바르면 로그인", () => {
     it("should save session with ip", () => {
       req.body.validationKey = "DIAGRAM";
 
@@ -45,7 +45,7 @@ describe("login", () => {
     });
   });
 
-  describe("if the KEY is invalid", () => {
+  describe("Key가 올바르지 않으면 401 error 반환", () => {
     it("should return Unauthorized error", () => {
       req.body.validationKey = "";
       try {
