@@ -3,7 +3,7 @@ import process from "process";
 import winston from "winston";
 import winstonDaily from "winston-daily-rotate-file"; // log 파일을 일자별로 생성하기 위해 사용
 
-const logDir = `${appRoot}/logs`; // logs dir 밑에 로그 파일 저장
+export const logDir = `${appRoot}/logs`; // logs dir 밑에 로그 파일 저장
 
 const { combine, timestamp, label, printf } = winston.format;
 
@@ -18,7 +18,7 @@ const logFormat = printf(({ level, message, label, timestamp }) => {
 
 const logger = winston.createLogger({
   format: combine(
-    label({ label: "UserService" }),
+    label({ label: "Grinergy Service" }),
     timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
     logFormat
   ),
@@ -28,7 +28,7 @@ const logger = winston.createLogger({
       level: "info",
       datePattern: "YYYY-MM-DD",
       dirname: logDir,
-      filename: `$DATE%.log`,
+      filename: `%DATE%.log`,
       maxFiles: 30, // 30일치 로그 파일 저장
       zippedArchive: true,
     }),
@@ -37,7 +37,7 @@ const logger = winston.createLogger({
       level: "error",
       datePattern: "YYYY-MM-DD",
       dirname: logDir,
-      filename: `$DATE%.error.log`,
+      filename: `%DATE%.error.log`,
       maxFiles: 30, // 30일치 로그 파일 저장
       zippedArchive: true,
     }),
@@ -48,7 +48,7 @@ const logger = winston.createLogger({
       level: "error",
       datePattern: "YYYY-MM-DD",
       dirname: logDir,
-      filename: `$DATE%.exception.log`,
+      filename: `%DATE%.exception.log`,
       maxFiles: 30, // 30일치 로그 파일 저장
       zippedArchive: true,
     }),

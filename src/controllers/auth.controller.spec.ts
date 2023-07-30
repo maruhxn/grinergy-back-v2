@@ -1,5 +1,5 @@
 import HttpException from "@/libs/http-exception";
-import { auth, logout, validateAdmin } from "./auth.controller";
+import { auth, login, logout } from "./auth.controller";
 
 let req: any, res: any, next: any;
 
@@ -24,12 +24,12 @@ beforeEach(() => {
   next = jest.fn();
 });
 
-describe("validateAdmin", () => {
+describe("login", () => {
   describe("if the KEY is valid", () => {
     it("should save session with ip", () => {
       req.body.validationKey = "DIAGRAM";
 
-      validateAdmin(req, res, next);
+      login(req, res, next);
       expect(res.json).toBeCalledTimes(1);
       expect(req.session).toEqual(
         expect.objectContaining({
@@ -49,7 +49,7 @@ describe("validateAdmin", () => {
     it("should return Unauthorized error", () => {
       req.body.validationKey = "";
       try {
-        validateAdmin(req as any, res, next);
+        login(req as any, res, next);
       } catch (err: any) {
         expect(err).toBeInstanceOf(HttpException);
         expect(err.status).toBe(401);

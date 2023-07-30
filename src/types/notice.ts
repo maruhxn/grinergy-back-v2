@@ -1,16 +1,18 @@
 import { z } from "zod";
-import { FileSchema } from "./file";
+import { FileValidator } from "./file";
 
-export const NoticeSchema = z.object({
+export const NoticeValidator = z.object({
   title: z.string(),
   contents: z.string(),
-  files: z.array(FileSchema).nullable(),
+  files: z.array(FileValidator).optional(),
 });
 
-export type Notice = z.infer<typeof NoticeSchema>;
+export const UpdateNoticeValidator = z.object({
+  title: z.string().min(1).max(100).optional(),
+  contents: z.string().min(1).optional(),
+  files: z.array(FileValidator).nullable().optional(),
+});
 
-export interface NoticeObject extends Notice {
-  _id: string;
-}
+export type Notice = z.infer<typeof NoticeValidator>;
 
-export interface NoticeModel extends Document, Notice {}
+export interface INotice extends Notice {}

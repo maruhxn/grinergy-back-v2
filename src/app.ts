@@ -11,18 +11,19 @@ import http from "http";
 import morgan from "morgan";
 import path from "path";
 
-import connect from "@/db";
+import connect from "@/configs/db";
+import connectRedis, { redisClient } from "@/configs/redis-connect";
 import HttpException from "@/libs/http-exception";
-import ErrorHandler from "@/middlewares/http-exception";
+import ErrorFilter from "@/middlewares/error.filter";
 import { authRouter, newsRouter, noticeRouter } from "@/routes";
+import RedisStore from "connect-redis";
 
 dotenv.config();
-// const redisClient = createClient({
-//   url: `redis://${process.env.REDIS_HOST}`,
-//   password: process.env.REDIS_PASSWORD,
-// });
 
 const app: Express = express();
+
+connectRedis();
+
 const isProd: boolean = process.env.NODE_ENV === "production";
 app.set("port", process.env.PORT || 8000);
 app.set("trust proxy", true);
@@ -63,7 +64,7 @@ app.use(
     name: process.env.COOKIE_NAME || "SSID",
     secret: process.env.COOKIE_SECRET || "secret",
     proxy: true,
-    // store: new RedisStore({ client: redisClient }),
+    store: new RedisStore({ client: redisClient }),
     cookie: {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24 * 7,
@@ -85,7 +86,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next(error);
 });
 
-app.use(ErrorHandler);
+app.use(ErrorFilter);
 
 const server = http.createServer(app);
 

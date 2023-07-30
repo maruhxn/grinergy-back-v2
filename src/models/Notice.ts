@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-const Schema = mongoose.Schema;
+import { INotice } from "@/types/notice";
+import { Schema, model } from "mongoose";
 
 const FileSchema = new Schema({
   filePath: {
@@ -12,7 +12,7 @@ const FileSchema = new Schema({
   },
 });
 
-const NoticeSchema = new Schema(
+const NoticeSchema = new Schema<INotice>(
   {
     title: {
       type: String,
@@ -22,9 +22,14 @@ const NoticeSchema = new Schema(
       type: String,
       required: true,
     },
-    files: [FileSchema],
+    files: [
+      {
+        type: FileSchema,
+        required: false,
+      },
+    ],
   },
   { timestamps: true }
 );
 
-export default mongoose.model("Notice", NoticeSchema);
+export default model<INotice>("Notice", NoticeSchema);

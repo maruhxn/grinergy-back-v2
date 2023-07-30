@@ -5,7 +5,7 @@ import { NextFunction, Request } from "express";
 
 dotenv.config();
 
-export const validateAdmin = (
+export const login = (
   req: Request,
   res: TypedResponse<void>,
   next: NextFunction
@@ -30,6 +30,7 @@ export const auth = (
   next: NextFunction
 ) => {
   if (!req.session?.isValid) throw new HttpException("Unauthorized", 401);
+
   return res.status(200).json({
     ok: true,
     msg: "인증 성공",

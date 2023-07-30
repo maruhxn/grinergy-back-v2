@@ -1,6 +1,6 @@
 import {
   createNews,
-  deleteNews,
+  deleteOneNews,
   getAllNews,
   getOneNews,
   updateNews,
@@ -14,9 +14,9 @@ const router = express.Router();
 router.route("/").get(catchAsync(getAllNews)).post(catchAsync(createNews));
 
 router
-  .route("/:NewsId")
+  .route("/:newsId")
   .get(catchAsync(getOneNews))
   .post(isLoggedIn, catchAsync(updateNews))
-  .delete(isLoggedIn, catchAsync(deleteNews));
+  .delete(isLoggedIn, catchAsync(deleteOneNews));
 
 export default router;

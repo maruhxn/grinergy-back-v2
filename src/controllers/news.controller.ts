@@ -1,13 +1,15 @@
 import HttpException from "@/libs/http-exception";
 import News from "@/models/News";
+import { INews, NewsValidator, UpdateNewsValidator } from "@/types/news";
 import { TypedResponse } from "@/types/response";
 import { NextFunction, Request } from "express";
+import { HydratedDocument } from "mongoose";
 
 const pageSize = 10;
 
 export const getAllNews = async (
   req: Request,
-  res: TypedResponse<any>,
+  res: TypedResponse<{ news: HydratedDocument<INews>[]; total: number }>,
   next: NextFunction
 ) => {
   const { page = 1 } = req.query;
@@ -34,11 +36,11 @@ export const getAllNews = async (
 
 export const getOneNews = async (
   req: Request,
-  res: TypedResponse<any>,
+  res: TypedResponse<HydratedDocument<INews>>,
   next: NextFunction
 ) => {
   const { newsId } = req.params;
-  const news = News.findById(newsId);
+  const news = await News.findById(newsId);
   if (!news) throw new HttpException("뉴스 정보가 없습니다", 404);
 
   return res.status(200).json({
@@ -49,8 +51,63 @@ export const getOneNews = async (
   });
 };
 
-export const createNews = async () => {};
+export const createNews = async (
+  req: Request,
+  res: TypedResponse<HydratedDocument<INews>>,
+  next: NextFunction
+) => {
+  const { title, contents, image, url } = NewsValidator.parse(req.body);
+  const news = await News.create({ title, contents, image, url });
 
-export const updateNews = async () => {};
+  return res.status(201).json({
+    ok: true,
+    msg: `뉴스-(${news._id}) 생성`,
+    status: 201,
+    data: news,
+  });
+};
 
-export const deleteNews = async () => {};
+export const updateNews = async (
+  req: Request,
+  res: TypedResponse<HydratedDocument<INews>>,
+  next: NextFunction
+) => {
+  const { title, contents, image, url } = UpdateNewsValidator.parse(req.body);
+  const { newsId } = req.params;
+
+  const updatedNews = await News.findOneAndUpdate(
+    { _id: newsId },
+    {
+      title,
+      contents,
+      image,
+      url,
+    }
+  );
+  if (!updatedNews) throw new HttpException("뉴스 정보가 없습니다", 404);
+
+  return res.status(201).json({
+    ok: true,
+    msg: `뉴스-(${newsId}) 수정`,
+    status: 201,
+    data: updatedNews,
+  });
+};
+
+export const deleteOneNews = async (
+  req: Request,
+  res: TypedResponse<HydratedDocument<INews>>,
+  next: NextFunction
+) => {
+  const { newsId } = req.params;
+
+  const deletedNews = await News.findByIdAndDelete(newsId);
+  if (!deletedNews) throw new HttpException("뉴스 정보가 없습니다", 404);
+
+  return res.status(201).json({
+    ok: true,
+    msg: `뉴스-(${newsId}) 삭제`,
+    status: 201,
+    data: deletedNews,
+  });
+};

@@ -1,8 +1,8 @@
 import { z } from "zod";
 
-export const FileSchema = z.object({
+export const FileValidator = z.object({
   filePath: z.string(),
   fileName: z.string(),
 });
 
-export type File = z.infer<typeof FileSchema>;
+export type File = z.infer<typeof FileValidator>;

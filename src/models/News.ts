@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-const Schema = mongoose.Schema;
+import { INews } from "@/types/news";
+import { model, Schema } from "mongoose";
 
 const FileSchema = new Schema({
   filePath: {
@@ -12,7 +12,7 @@ const FileSchema = new Schema({
   },
 });
 
-const NewsSchema = new Schema(
+const NewsSchema = new Schema<INews>(
   {
     image: FileSchema,
     title: {
@@ -31,4 +31,4 @@ const NewsSchema = new Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("News", NewsSchema);
+export default model<INews>("News", NewsSchema);
