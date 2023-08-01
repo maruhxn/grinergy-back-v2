@@ -1,113 +1,62 @@
 import HttpException from "@/libs/http-exception";
-import { auth, login, logout } from "./auth.controller";
+import jwt from "jsonwebtoken";
+import { login } from "./auth.controller";
+
+jest.mock("jsonwebtoken", () => ({
+  sign: jest.fn(),
+}));
 
 let req: any, res: any, next: any;
 
 beforeEach(() => {
   req = {
     body: {
-      validationKey: "",
+      validationKey: "DIAGRAM",
     },
-    session: {
-      isValid: false,
-      ip: "",
-      destroy: (callback: (err: any) => void) => {
-        callback(null);
-      },
-    },
-    ip: "ipAddress",
   };
   res = {
-    status: jest.fn(() => res),
+    status: jest.fn().mockReturnThis(),
     json: jest.fn(),
   };
+
   next = jest.fn();
 });
 
-describe("login", () => {
-  describe("key가 올바르면 로그인", () => {
-    it("should save session with ip", () => {
-      req.body.validationKey = "DIAGRAM";
+afterEach(() => {
+  jest.clearAllMocks();
+});
 
-      login(req, res, next);
-      expect(res.json).toBeCalledTimes(1);
-      expect(req.session).toEqual(
-        expect.objectContaining({
-          isValid: true,
-          ip: "ipAddress",
-        })
-      );
-      expect(res.json).toBeCalledWith({
-        ok: true,
-        msg: "인증 성공",
-        status: 200,
-      });
+describe("login", () => {
+  it("key가 올바르면 accessToken을 발급해야 한다.", async () => {
+    const token = "mocked-token";
+    (jwt.sign as jest.Mock).mockReturnValue(token);
+
+    await login(req, res, next);
+
+    expect(jwt.sign).toHaveBeenCalledWith(
+      { isValid: true },
+      expect.any(String), // process.env.COOKIE_SECRET
+      { expiresIn: "3d", algorithm: "HS256" }
+    );
+
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith({
+      ok: true,
+      msg: "인증 성공",
+      status: 200,
+      data: token,
     });
   });
 
   describe("Key가 올바르지 않으면 401 error 반환", () => {
-    it("should return Unauthorized error", () => {
+    it("should return Unauthorized error", async () => {
       req.body.validationKey = "";
       try {
-        login(req as any, res, next);
+        await login(req as any, res, next);
       } catch (err: any) {
         expect(err).toBeInstanceOf(HttpException);
         expect(err.status).toBe(401);
       }
     });
-  });
-});
-
-describe("auth", () => {
-  it("should return status 200 if req.session.isValid is true", () => {
-    req.session.isValid = true;
-    auth(req, res, next);
-    expect(res.json).toBeCalledTimes(1);
-    expect(req.session).toEqual(
-      expect.objectContaining({
-        isValid: true,
-      })
-    );
-    expect(res.json).toBeCalledWith({
-      ok: true,
-      msg: "인증 성공",
-      status: 200,
-    });
-  });
-  it("should return Unauthorized error if req.session.isValid is false or undefined", () => {
-    req.session.isValid = false;
-    try {
-      auth(req, res, next);
-    } catch (err: any) {
-      expect(err).toBeInstanceOf(HttpException);
-      expect(err.status).toBe(401);
-    }
-  });
-});
-
-describe("logout", () => {
-  it("should clear the req.session", () => {
-    logout(req, res, next);
-    // expect(res.json).toBeCalledTimes(1);
-    expect(res.status).toBeCalledWith(201);
-    expect(res.json).toBeCalledWith({
-      ok: true,
-      msg: "로그아웃 성공",
-      status: 201,
-    });
-  });
-
-  it("should call next(err) if there is an error", () => {
-    const mockError = new Error("Session destruction failed");
-    req.session.destory = (callback: (err: any) => void) => {
-      callback(mockError);
-    };
-
-    try {
-      logout(req, res, next);
-    } catch (error) {
-      expect(next).toBeCalledWith(mockError);
-      expect(next).toBeCalledTimes(1);
-    }
   });
 });

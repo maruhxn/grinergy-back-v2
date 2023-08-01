@@ -29,9 +29,6 @@ beforeEach(() => {
     params: {
       newsId: "1",
     },
-    session: {
-      isValid: true,
-    },
   };
 
   res = {

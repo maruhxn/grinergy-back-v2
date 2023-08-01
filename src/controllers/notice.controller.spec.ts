@@ -28,9 +28,6 @@ beforeEach(() => {
     params: {
       noticeId: "1",
     },
-    session: {
-      isValid: true,
-    },
   };
   res = {
     status: jest.fn().mockReturnThis(),
