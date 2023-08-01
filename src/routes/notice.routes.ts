@@ -1,22 +1,26 @@
 import {
   createNotice,
-  deleteNotice,
+  deleteOneNotice,
   getAllNotice,
   getOneNotice,
   updateNotice,
 } from "@/controllers/notice.controller";
 import catchAsync from "@/libs/catch-async";
 import { isLoggedIn } from "@/middlewares/auth.guard";
+import upload from "@/middlewares/multer";
 import express from "express";
 
 const router = express.Router();
 
-router.route("/").get(catchAsync(getAllNotice)).post(catchAsync(createNotice));
+router
+  .route("/")
+  .get(catchAsync(getAllNotice))
+  .post(isLoggedIn, upload.array("files"), catchAsync(createNotice));
 
 router
   .route("/:noticeId")
   .get(catchAsync(getOneNotice))
-  .post(isLoggedIn, catchAsync(updateNotice))
-  .delete(isLoggedIn, catchAsync(deleteNotice));
+  .put(isLoggedIn, upload.array("files"), catchAsync(updateNotice))
+  .delete(isLoggedIn, catchAsync(deleteOneNotice));
 
 export default router;

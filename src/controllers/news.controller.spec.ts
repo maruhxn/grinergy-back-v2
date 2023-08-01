@@ -1,7 +1,7 @@
 import HttpException from "@/libs/http-exception";
 import News from "@/models/News";
-import { File } from "@/types/file";
 import { NextFunction } from "express";
+import * as fs from "fs";
 import { z } from "zod";
 import {
   createNews,
@@ -12,6 +12,10 @@ import {
 } from "./news.controller";
 
 let req: any, res: any, next: NextFunction, mockNewsData: any[];
+
+jest.mock("fs", () => ({
+  unlink: jest.fn(),
+}));
 
 const total = 12;
 
@@ -24,6 +28,9 @@ beforeEach(() => {
     params: {
       newsId: "1",
     },
+    session: {
+      isValid: true,
+    },
   };
 
   res = {
@@ -32,11 +39,14 @@ beforeEach(() => {
   };
 
   next = jest.fn();
-
+  mockNewsData = [];
   for (let i = 1; i <= total; i++) {
     mockNewsData.push({
       _id: i + "",
-      image: `ImageUrl ${i}`,
+      image: {
+        filePath: `filePath ${i}`,
+        fileName: `fileName ${i}`,
+      },
       title: `News ${i}`,
       contents: `contents ${i}`,
       url: `url ${i}`,
@@ -132,12 +142,8 @@ describe("getOneNews", () => {
 });
 
 describe("createNews", () => {
-  const mockCreate = jest
-    .spyOn(News, "create")
-    .mockImplementation((body: any) => {
-      mockNewsData.push({ _id: mockNewsData.length + 1 + "", ...body });
-      return { _id: mockNewsData.length + "", ...body };
-    });
+  const mockCreate = jest.spyOn(News, "create");
+
   it("올바르지 않은 body가 들어오면 validation error를 반환.", async () => {
     req.body = {
       image: {},
@@ -145,6 +151,7 @@ describe("createNews", () => {
       contents: "",
       url: "",
     };
+
     try {
       await createNews(req, res, next);
     } catch (err: any) {
@@ -156,44 +163,59 @@ describe("createNews", () => {
   });
 
   it("올바른 body가 들어오면 news를 1개 생성.", async () => {
-    req.body = {
+    (req.file = {
+      path: "Created FilePath",
+      filename: "Created FileName",
+    }),
+      (req.body = {
+        title: "Created News Title",
+        contents: "Created News Contents",
+        url: "Created News Url",
+        image: {
+          filePath: "Created FilePath",
+          fileName: "Created FileName",
+        },
+      });
+
+    const createdNews = {
+      _id: "Created News Id",
       image: {
-        fileName: "imageName",
-        filePath: "imagePath",
-      } as File,
-      title: "title",
-      contents: "contents",
-      url: "url",
+        filePath: "Created FilePath",
+        fileName: "Created FileName",
+      },
+      title: req.body.title,
+      contents: req.body.contents,
+      url: req.body.url,
     };
+    mockCreate.mockResolvedValue(createdNews as any);
 
     await createNews(req, res, next);
 
     expect(res.status).toBeCalledTimes(1);
     expect(res.json).toBeCalledTimes(1);
     expect(res.status).toBeCalledWith(201);
+    expect(mockCreate).toBeCalledTimes(1);
+    expect(mockCreate).toBeCalledWith({
+      image: {
+        filePath: "Created FilePath",
+        fileName: "Created FileName",
+      },
+      title: req.body.title,
+      contents: req.body.contents,
+      url: req.body.url,
+    });
     expect(res.json).toBeCalledWith({
       ok: true,
-      msg: `뉴스-(${mockNewsData.length}) 생성`,
+      msg: `뉴스-(Created News Id) 생성`,
       status: 201,
-      data: mockNewsData[mockNewsData.length - 1],
+      data: createdNews,
     });
   });
 });
 
 describe("updateNews", () => {
-  const mockUpdate = jest
-    .spyOn(News, "findOneAndUpdate")
-    .mockImplementation((key: any, body: any) => {
-      let selectedNewsIdx = mockNewsData.findIndex(
-        (news) => news._id === key._id
-      );
-      if (selectedNewsIdx === -1) return null;
-      mockNewsData[selectedNewsIdx] = {
-        ...mockNewsData[selectedNewsIdx],
-        ...body,
-      };
-      return mockNewsData[selectedNewsIdx];
-    });
+  const mockUpdate = jest.spyOn(News, "findByIdAndUpdate");
+
   it("올바르지 않은 body가 들어오면 validation error를 반환.", async () => {
     req.body = {
       image: {},
@@ -212,40 +234,109 @@ describe("updateNews", () => {
     }
   });
 
-  it("올바른 body가 들어오면 news를 1개 생성.", async () => {
-    req.body = {
-      image: {
-        fileName: "imageName",
-        filePath: "imagePath",
-      } as File,
-      title: "titleUpdated",
-      contents: "contents",
-      url: "url",
-    };
-    const { newsId } = req.params;
+  describe("올바른 body가 들어왔을 때", () => {
+    it("req.file이 있으면, news를 수정하고 기존 이미지 삭제.", async () => {
+      (req.file = {
+        path: "Updated FilePath",
+        filename: "Updated FileName",
+      }),
+        (req.body = {
+          title: "Updated News Title",
+          contents: "Updated News Contents",
+          url: "Updated News Url",
+        });
 
-    await updateNews(req, res, next);
+      const oldNews = {
+        image: {
+          filePath: "Old FilePath",
+          fileName: "Old FileName",
+        },
+        title: "Old Title",
+        contents: "Old Contents",
+        url: "Old Url",
+      };
 
-    const selectedNewsIdx = mockNewsData.findIndex(
-      (news) => news._id === newsId
-    );
+      mockUpdate.mockResolvedValue(oldNews);
 
-    expect(res.status).toBeCalledTimes(1);
-    expect(res.json).toBeCalledTimes(1);
-    expect(res.status).toBeCalledWith(201);
-    expect(res.json).toBeCalledWith({
-      ok: true,
-      msg: `뉴스-(${newsId}) 수정`,
-      status: 201,
-      data: mockNewsData[selectedNewsIdx],
+      const updateObject = {
+        image: {
+          filePath: "Updated FilePath",
+          fileName: "Updated FileName",
+        },
+        title: req.body.title,
+        contents: req.body.contents,
+        url: req.body.url,
+      };
+
+      const { newsId } = req.params;
+
+      await updateNews(req, res, next);
+
+      expect(res.status).toBeCalledTimes(1);
+      expect(res.json).toBeCalledTimes(1);
+      expect(res.status).toBeCalledWith(201);
+      expect(res.json).toBeCalledWith({
+        ok: true,
+        msg: `뉴스-(${newsId}) 수정`,
+        status: 201,
+      });
+      expect(mockUpdate).toBeCalledTimes(1);
+      expect(mockUpdate).toBeCalledWith(newsId, updateObject);
+      expect(fs.unlink).toBeCalledTimes(1);
+      expect(fs.unlink).toHaveBeenCalledWith(
+        `uploads/${oldNews.image.fileName}`,
+        expect.any(Function)
+      );
+    });
+    it("req.file이 없으면, title, contents, url만을 가지고 news를 수정.", async () => {
+      req.body = {
+        title: "Updated News Title",
+        contents: "Updated News Contents",
+        url: "Updated News Url",
+      };
+      const oldNews = {
+        image: {
+          filePath: "Old FilePath",
+          fileName: "Old FileName",
+        },
+        title: "Old Title",
+        contents: "Old Contents",
+        url: "Old Url",
+      };
+
+      mockUpdate.mockResolvedValue(oldNews);
+
+      const updateObject = {
+        title: req.body.title,
+        contents: req.body.contents,
+        url: req.body.url,
+      };
+
+      const { newsId } = req.params;
+
+      await updateNews(req, res, next);
+
+      expect(res.status).toBeCalledTimes(1);
+      expect(res.json).toBeCalledTimes(1);
+      expect(res.status).toBeCalledWith(201);
+      expect(res.json).toBeCalledWith({
+        ok: true,
+        msg: `뉴스-(${newsId}) 수정`,
+        status: 201,
+      });
+      expect(mockUpdate).toBeCalledTimes(1);
+      expect(mockUpdate).toBeCalledWith(newsId, updateObject);
     });
   });
 
   it("params로 올바르지 않은 newsId가 들어오면 404 error 반환", async () => {
     req.params.newsId = "invalid params";
     req.body = {
-      title: "titleUpdated",
+      title: "Updated News Title",
+      contents: "Updated News Contents",
+      url: "Updated News Url",
     };
+    mockUpdate.mockResolvedValue(null);
 
     try {
       await updateNews(req, res, next);
@@ -254,23 +345,26 @@ describe("updateNews", () => {
       expect(res.json).not.toHaveBeenCalled();
       expect(err).toBeInstanceOf(HttpException);
       expect(err.status).toBe(404);
+      expect(mockUpdate).toBeCalledTimes(1);
+      expect(fs.unlink).not.toBeCalled();
     }
   });
 });
 describe("deleteNews", () => {
-  let deletedNews: any = null;
-  const mockDelete = jest
-    .spyOn(News, "findByIdAndDelete")
-    .mockImplementation((newsId: string) => {
-      let selectedNewsIdx = mockNewsData.findIndex(
-        (news) => news._id === newsId
-      );
-      if (selectedNewsIdx === -1) return null;
-      deletedNews = mockNewsData.splice(selectedNewsIdx, 1);
-      return deletedNews;
-    });
+  const mockDelete = jest.spyOn(News, "findByIdAndDelete");
+
   it("params로 newsId가 들어오면 해당 news를 삭제", async () => {
     const { newsId } = req.params;
+    const deletedNews = {
+      _id: newsId,
+      title: "Deleted News Title",
+      contents: "Deleted News Contents",
+      image: {
+        filePath: `filePath ${newsId}`,
+        fileName: `fileName ${newsId}`,
+      },
+    };
+    mockDelete.mockResolvedValue(deletedNews);
     await deleteOneNews(req, res, next);
 
     expect(res.status).toBeCalledTimes(1);
@@ -278,6 +372,11 @@ describe("deleteNews", () => {
     expect(res.status).toBeCalledWith(201);
     expect(mockDelete).toBeCalledTimes(1);
     expect(mockDelete).toBeCalledWith(newsId);
+    expect(fs.unlink).toHaveBeenCalledTimes(1);
+    expect(fs.unlink).toHaveBeenCalledWith(
+      `uploads/${deletedNews.image.fileName}`,
+      expect.any(Function)
+    );
     expect(res.json).toBeCalledWith({
       ok: true,
       msg: `뉴스-(${newsId}) 삭제`,
@@ -287,7 +386,7 @@ describe("deleteNews", () => {
   });
   it("params로 올바르지 않은 newsId가 들어오면 404 error 반환", async () => {
     req.params.newsId = "invalid params";
-
+    mockDelete.mockResolvedValue(null);
     try {
       await deleteOneNews(req, res, next);
     } catch (err: any) {
@@ -295,6 +394,8 @@ describe("deleteNews", () => {
       expect(res.json).not.toHaveBeenCalled();
       expect(err).toBeInstanceOf(HttpException);
       expect(err.status).toBe(404);
+      expect(mockDelete).toBeCalledWith(req.params.newsId);
+      expect(fs.unlink).not.toHaveBeenCalled();
     }
   });
 });

@@ -1,5 +1,7 @@
 import HttpException from "@/libs/http-exception";
+import { extractFiles } from "@/libs/util";
 import Notice from "@/models/Notice";
+import { File } from "@/types/file";
 import {
   INotice,
   NoticeValidator,
@@ -7,6 +9,7 @@ import {
 } from "@/types/notice";
 import { TypedResponse } from "@/types/response";
 import { NextFunction, Request } from "express";
+import * as fs from "fs";
 import { HydratedDocument } from "mongoose";
 
 const pageSize = 10;
@@ -60,8 +63,15 @@ export const createNotice = async (
   res: TypedResponse<HydratedDocument<INotice>>,
   next: NextFunction
 ) => {
-  const { title, contents, files } = NoticeValidator.parse(req.body);
-  const notice = await Notice.create({ title, contents, files });
+  const { title, contents } = NoticeValidator.parse(req.body);
+  let notice: HydratedDocument<INotice>;
+
+  if (req.files) {
+    const files = extractFiles(req.files as Express.Multer.File[]);
+    notice = await Notice.create({ title, contents, files });
+  } else {
+    notice = await Notice.create({ title, contents });
+  }
 
   return res.status(201).json({
     ok: true,
@@ -71,22 +81,63 @@ export const createNotice = async (
   });
 };
 
+/**
+ * 기존 방식
+ * 1. 일단 title, contents만 먼저 update
+ * 2. files가 있다면 추가로 save
+ * 3. deletedFiles가 있다면 다시 update
+ * 이렇게 총 3번의 절차에 걸쳐 수행하다보니 오버헤드가 컸음.
+ *
+ * 개선 방식
+ * 1. deletedFiles 있다면 $pull을 통해 먼저 삭제 후 update -> 비동기로 파일 삭제까지 먼저 진행
+ * 2. 이후 req.files가 있다면 정제 후 files 배열에 넣어줌.
+ * 3. files가 빈 배열인지 아닌지 상관없이 $pull 연산자를 통해 한번에 업데이트 가능.
+ * 2번의 DB 접근으로 줄이고, 코드 가독성이 좋아짐.
+ */
 export const updateNotice = async (
   req: Request,
   res: TypedResponse<HydratedDocument<INotice>>,
   next: NextFunction
 ) => {
-  const { title, contents, files } = UpdateNoticeValidator.parse(req.body);
+  const { title, contents, deletedFiles } = UpdateNoticeValidator.parse(
+    req.body
+  );
   const { noticeId } = req.params;
+  const files: File[] = req.files
+    ? extractFiles(req.files as Express.Multer.File[])
+    : [];
 
-  const updatedNotice = await Notice.findOneAndUpdate(
-    { _id: noticeId },
+  if (deletedFiles) {
+    await Notice.findByIdAndUpdate(
+      noticeId,
+      {
+        $pull: {
+          files: {
+            fileName: { $in: deletedFiles },
+          },
+        },
+      },
+      { new: true }
+    );
+    deletedFiles.forEach((deletedFileName) => {
+      fs.unlink("uploads/" + deletedFileName, (err) => {
+        if (err) throw err;
+      });
+    });
+  }
+
+  const updatedNotice = await Notice.findByIdAndUpdate(
+    noticeId,
     {
       title,
       contents,
-      files,
-    }
+      $push: {
+        files: files,
+      },
+    },
+    { new: true }
   );
+
   if (!updatedNotice) throw new HttpException("공지사항 정보가 없습니다", 404);
 
   return res.status(201).json({
@@ -106,6 +157,13 @@ export const deleteOneNotice = async (
 
   const deletedNotice = await Notice.findByIdAndDelete(noticeId);
   if (!deletedNotice) throw new HttpException("공지사항 정보가 없습니다", 404);
+
+  /* File Deleting */
+  deletedNotice?.files?.forEach((deletedFile) => {
+    fs.unlink("uploads/" + deletedFile.fileName, (err) => {
+      if (err) throw err;
+    });
+  });
 
   return res.status(201).json({
     ok: true,

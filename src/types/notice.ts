@@ -7,10 +7,17 @@ export const NoticeValidator = z.object({
   files: z.array(FileValidator).optional(),
 });
 
+export const CreateNoticeValidator = z.object({
+  title: z.string().min(1).max(100).optional(),
+  contents: z.string().min(1).optional(),
+  files: z.array(FileValidator).nullable().optional(),
+});
+
 export const UpdateNoticeValidator = z.object({
   title: z.string().min(1).max(100).optional(),
   contents: z.string().min(1).optional(),
   files: z.array(FileValidator).nullable().optional(),
+  deletedFiles: z.array(z.string()).optional(),
 });
 
 export type Notice = z.infer<typeof NoticeValidator>;

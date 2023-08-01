@@ -1,8 +1,11 @@
 import HttpException from "@/libs/http-exception";
+import { extractOneFile } from "@/libs/util";
 import News from "@/models/News";
+import { File } from "@/types/file";
 import { INews, NewsValidator, UpdateNewsValidator } from "@/types/news";
 import { TypedResponse } from "@/types/response";
 import { NextFunction, Request } from "express";
+import * as fs from "fs";
 import { HydratedDocument } from "mongoose";
 
 const pageSize = 10;
@@ -56,8 +59,13 @@ export const createNews = async (
   res: TypedResponse<HydratedDocument<INews>>,
   next: NextFunction
 ) => {
-  const { title, contents, image, url } = NewsValidator.parse(req.body);
-  const news = await News.create({ title, contents, image, url });
+  const { title, contents, url } = NewsValidator.parse(req.body);
+  let news: HydratedDocument<INews>;
+
+  if (!req.file) throw new HttpException("이미지를 업로드 해주세요.", 400);
+
+  const file = extractOneFile(req.file as Express.Multer.File);
+  news = await News.create({ title, contents, image: file, url });
 
   return res.status(201).json({
     ok: true,
@@ -69,28 +77,35 @@ export const createNews = async (
 
 export const updateNews = async (
   req: Request,
-  res: TypedResponse<HydratedDocument<INews>>,
+  res: TypedResponse<void>,
   next: NextFunction
 ) => {
-  const { title, contents, image, url } = UpdateNewsValidator.parse(req.body);
+  const { title, contents, url } = UpdateNewsValidator.parse(req.body);
   const { newsId } = req.params;
+  const updateObject: {
+    title?: string;
+    contents?: string;
+    url?: string;
+    image?: File;
+  } = { title, contents, url };
 
-  const updatedNews = await News.findOneAndUpdate(
-    { _id: newsId },
-    {
-      title,
-      contents,
-      image,
-      url,
-    }
-  );
-  if (!updatedNews) throw new HttpException("뉴스 정보가 없습니다", 404);
+  if (req.file) {
+    const file = extractOneFile(req.file as Express.Multer.File);
+    updateObject.image = file;
+  }
+
+  const oldNews = await News.findByIdAndUpdate(newsId, updateObject);
+
+  if (!oldNews) throw new HttpException("뉴스 정보가 없습니다", 404);
+
+  fs.unlink("uploads/" + oldNews.image.fileName, (err) => {
+    if (err) throw err;
+  });
 
   return res.status(201).json({
     ok: true,
     msg: `뉴스-(${newsId}) 수정`,
     status: 201,
-    data: updatedNews,
   });
 };
 
@@ -103,6 +118,11 @@ export const deleteOneNews = async (
 
   const deletedNews = await News.findByIdAndDelete(newsId);
   if (!deletedNews) throw new HttpException("뉴스 정보가 없습니다", 404);
+
+  /* File Deleting */
+  fs.unlink("uploads/" + deletedNews.image.fileName, (err) => {
+    if (err) throw err;
+  });
 
   return res.status(201).json({
     ok: true,
