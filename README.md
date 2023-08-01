@@ -40,7 +40,7 @@ GRINERGY SERVER v2
 
 - Migration 계획
 
-Backend를 먼저 AWS Lightsail에 배포
+Backend를 먼저 AWS Lightsail에 배포 -> 기존 서버에서 backend를 내리고, 백엔드 엔드포인트만 aws로 옮김. -> 이후 aws s3로 프론트까지 배포
 
 - FRONTEND
 

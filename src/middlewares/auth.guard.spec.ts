@@ -54,7 +54,7 @@ describe("isLoggedIn", () => {
     expect(next).toHaveBeenCalledWith(
       expect.objectContaining({
         message: "유효하지 않은 토큰입니다.",
-        status: 401,
+        status: 403,
       })
     );
   });
