@@ -6,29 +6,24 @@ GRINERGY SERVER v2
   1. validation 강화 [OK]
   1. TDD [OK]
   1. Redis를 활용한 캐싱 [OK]
-  1. Github Actions를 통한 CI/CD [OK]
+  1. Github Actions를 통한 CI/CD [OK] -> frontend: push -> build -> s3 버킷 업로드 / backend: push -> test => lightsail에서 npm run start.
   1. 전반적인 코드 리펙토링 [OK]
-  1. Rate Limiting
   1. 관리자 로그인을 토큰key인증 -> session? JWT?
      Session을 하게 되면 loadbalancing이 어려움. 따로 redis를 두어야 하는데, 해봤자 10명정도 어드민 로그인을 할거 같은데 session으로 따로 레디스를 관리할 필요가 있을까?
      jwt 사용하면 프론트에서는 좀 귀찮겠지만, 따로 레디스 설정도 할 필요가 없으며, 성능도 더 좋을 듯. 추후에 Lambda로 백엔드를 전환하기에도 용이.
   1. 이미지 저장 시 리사이징
   1. multer-s3 적용
-  1. search controller 구현
+  1. search controller로 분리 및 pagination [ok]
 
 - ARCHITECTURE 변경사항
-
-  1. AWS로 이전.
-  1. cloudflare ❌ -> AWS Cloudfront
-  1. cloud storage 사용 -> cloudinary? s3?
-  1. Redis -> elasticache? upstash?
-  1. Serverless로 해야할랑가?
 
   ### 후보
 
   - FRONTEND: route53 -> cloudfront, ACM -> s3
   - BACKEND: lightsail? aws lambda(코드 다시 짜야함..)? beanstalk
   - DB: MongoDB Atlas
+
+  - aws shield, aws waf 등을 넣어야 할까? -> 보안이 중요한 웹은 아님.. 굳이 싶음.
 
   #### Serverful vs Serverless
 

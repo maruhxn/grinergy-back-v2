@@ -15,7 +15,7 @@ import connect from "@/configs/db";
 import connectRedis, { redisClient } from "@/configs/redis-connect";
 import HttpException from "@/libs/http-exception";
 import ErrorFilter from "@/middlewares/error.filter";
-import { authRouter, newsRouter, noticeRouter } from "@/routes";
+import { authRouter, newsRouter, noticeRouter, searchRouter } from "@/routes";
 import RedisStore from "connect-redis";
 
 declare module "express-session" {
@@ -84,6 +84,7 @@ app.use(
 app.use("/auth", authRouter);
 app.use("/notice", noticeRouter);
 app.use("/news", newsRouter);
+app.use("/search", searchRouter);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   const error = new HttpException(

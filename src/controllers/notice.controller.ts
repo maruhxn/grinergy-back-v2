@@ -24,7 +24,7 @@ export const getAllNotice = async (
   if (isNaN(page)) throw new HttpException("올바르지 않은 쿼리입니다.", 400);
   const skipPage = (+page - 1) * pageSize;
 
-  const total = await Notice.count({});
+  const total = await Notice.countDocuments({});
   const notices = await Notice.find({})
     .sort({ _id: -1 })
     .limit(pageSize)
@@ -170,5 +170,43 @@ export const deleteOneNotice = async (
     msg: `공지사항-(${noticeId}) 삭제`,
     status: 201,
     data: deletedNotice,
+  });
+};
+
+export const getNoticeStartWithQuery = async (
+  req: Request,
+  res: TypedResponse<{
+    searchedNotices: HydratedDocument<INotice>[];
+    total: number;
+  }>,
+  next: NextFunction
+) => {
+  const { q, page = 1 } = req.query;
+  /* @ts-ignore */
+  if (isNaN(page)) throw new HttpException("올바르지 않은 쿼리입니다.", 400);
+  if (!q) throw new HttpException("검색어를 입력해주세요", 400);
+  const skipPage = (+page - 1) * pageSize;
+  const regex = new RegExp(`^${q}`, "i");
+
+  const searchQuery = {
+    title: {
+      $regex: regex,
+    },
+  };
+
+  const total = await Notice.countDocuments(searchQuery);
+  const searchedNotices = await Notice.find(searchQuery)
+    .sort({ _id: -1 })
+    .limit(pageSize)
+    .skip(skipPage);
+
+  return res.status(200).json({
+    ok: true,
+    msg: "검색 결과",
+    status: 200,
+    data: {
+      searchedNotices,
+      total,
+    },
   });
 };

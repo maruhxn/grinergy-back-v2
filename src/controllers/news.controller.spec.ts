@@ -7,6 +7,7 @@ import {
   createNews,
   deleteOneNews,
   getAllNews,
+  getNewsStartWithQuery,
   getOneNews,
   updateNews,
 } from "./news.controller";
@@ -59,23 +60,21 @@ afterEach(() => {
 });
 
 describe("getAllNews", () => {
-  const mockFind = jest.fn().mockReturnValue({
-    sort: jest.fn().mockReturnValue({
-      limit: jest.fn().mockImplementation((pageSize) => {
-        mockNewsData.splice(pageSize);
-        return {
-          skip: jest.fn().mockResolvedValue(mockNewsData),
-        };
-      }),
-    }),
-  });
+  const mockFindAll = jest.spyOn(News, "find");
+  const mockCount = jest.spyOn(News, "count").mockResolvedValue(total);
 
-  const mockCount = jest.fn().mockReturnValue(total);
-  jest.spyOn(News, "find").mockImplementation(mockFind);
-  jest.spyOn(News, "count").mockImplementation(mockCount);
-
-  it("요청이 들어오면 News 배열을 반환해야 한다.", async () => {
+  it("요청이 들어오면 News 배열(최대 10개)을 반환해야 한다.", async () => {
     req.query = { page: "1" };
+
+    const results = mockNewsData.slice(0, 10);
+
+    mockFindAll.mockReturnValue({
+      sort: jest.fn().mockReturnValue({
+        limit: jest.fn().mockReturnValue({
+          skip: jest.fn().mockResolvedValue(results),
+        }),
+      }),
+    } as any);
 
     await getAllNews(req, res, next);
     expect(res.status).toBeCalledWith(200);
@@ -86,10 +85,13 @@ describe("getAllNews", () => {
       msg: "뉴스 배열 반환",
       status: 200,
       data: {
-        news: mockNewsData,
+        news: results,
         total,
       },
     });
+    expect(mockCount).toBeCalledTimes(1);
+    expect(mockFindAll).toBeCalledTimes(1);
+    expect(results.length).toBeLessThanOrEqual(10);
   });
 
   it("잘못된 query가 주어지면 400 error 반환", async () => {
@@ -102,6 +104,8 @@ describe("getAllNews", () => {
       expect(res.json).not.toHaveBeenCalled();
       expect(err).toBeInstanceOf(HttpException);
       expect(err.status).toBe(400);
+      expect(mockCount).not.toBeCalled();
+      expect(mockFindAll).not.toBeCalled();
     }
   });
 });
@@ -396,6 +400,101 @@ describe("deleteNews", () => {
       expect(err.status).toBe(404);
       expect(mockDelete).toBeCalledWith(req.params.newsId);
       expect(fs.unlink).not.toHaveBeenCalled();
+    }
+  });
+});
+
+describe("getNewsStartWithQuery", () => {
+  const mockFind = jest.spyOn(News, "find");
+  const mockCount = jest.spyOn(News, "countDocuments").mockResolvedValue(total);
+  it("올바른 q 및 page가 들어오면, 해당 쿼리로 시작하는 news(최대 10개)와 전체 news 개수를 반환", async () => {
+    req.query = {
+      q: "Search Query",
+      page: "1",
+    };
+
+    const searchedNews = [
+      {
+        _id: "Searched News ID",
+        title: "Search Query with Title",
+        contents: "Searched News Contents",
+        files: [
+          {
+            filePath: "Searched News filePath",
+            fileName: "Searched News fileName",
+          },
+        ],
+      },
+    ];
+
+    mockFind.mockReturnValue({
+      sort: jest.fn().mockReturnValue({
+        limit: jest.fn().mockReturnValue({
+          skip: jest.fn().mockResolvedValue(searchedNews),
+        }),
+      }),
+    } as any);
+
+    await getNewsStartWithQuery(req, res, next);
+    expect(res.status).toBeCalledWith(200);
+    expect(res.status).toBeCalledTimes(1);
+    expect(res.json).toBeCalledTimes(1);
+    expect(res.json).toBeCalledWith({
+      ok: true,
+      msg: "검색 결과",
+      status: 200,
+      data: {
+        searchedNews,
+        total,
+      },
+    });
+    expect(mockCount).toBeCalledTimes(1);
+    expect(mockFind).toBeCalledTimes(1);
+    expect(searchedNews.length).toBeLessThanOrEqual(10);
+  });
+
+  it("잘못된 query가 주어지면 400 error 반환", async () => {
+    req.query = { q: "search query", page: "invalid-page" };
+
+    try {
+      await getNewsStartWithQuery(req, res, next);
+    } catch (err: any) {
+      expect(res.status).not.toHaveBeenCalled();
+      expect(res.json).not.toHaveBeenCalled();
+      expect(err).toBeInstanceOf(HttpException);
+      expect(err.status).toBe(400);
+      expect(mockCount).not.toBeCalled();
+      expect(mockFind).not.toBeCalled();
+    }
+  });
+
+  it("q가 없다면, 400 error 반환", async () => {
+    req.query = { page: "1" };
+
+    try {
+      await getNewsStartWithQuery(req, res, next);
+    } catch (err: any) {
+      expect(res.status).not.toHaveBeenCalled();
+      expect(res.json).not.toHaveBeenCalled();
+      expect(err).toBeInstanceOf(HttpException);
+      expect(err.status).toBe(400);
+      expect(mockCount).not.toBeCalled();
+      expect(mockFind).not.toBeCalled();
+    }
+  });
+
+  it("search와 q 모두 없다면, 400 error 반환", async () => {
+    req.query = {};
+
+    try {
+      await getNewsStartWithQuery(req, res, next);
+    } catch (err: any) {
+      expect(res.status).not.toHaveBeenCalled();
+      expect(res.json).not.toHaveBeenCalled();
+      expect(err).toBeInstanceOf(HttpException);
+      expect(err.status).toBe(400);
+      expect(mockCount).not.toBeCalled();
+      expect(mockFind).not.toBeCalled();
     }
   });
 });
