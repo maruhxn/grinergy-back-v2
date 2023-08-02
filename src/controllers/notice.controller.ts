@@ -67,7 +67,7 @@ export const createNotice = async (
   let notice: HydratedDocument<INotice>;
 
   if (req.files) {
-    const files = extractFiles(req.files as Express.Multer.File[]);
+    const files = extractFiles(req.files as Express.MulterS3.File[]);
     notice = await Notice.create({ title, contents, files });
   } else {
     notice = await Notice.create({ title, contents });
@@ -104,7 +104,7 @@ export const updateNotice = async (
   );
   const { noticeId } = req.params;
   const files: File[] = req.files
-    ? extractFiles(req.files as Express.Multer.File[])
+    ? extractFiles(req.files as Express.MulterS3.File[])
     : [];
 
   if (deletedFiles) {

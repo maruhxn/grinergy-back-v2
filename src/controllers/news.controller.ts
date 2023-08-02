@@ -64,7 +64,7 @@ export const createNews = async (
 
   if (!req.file) throw new HttpException("이미지를 업로드 해주세요.", 400);
 
-  const file = extractOneFile(req.file as Express.Multer.File);
+  const file = extractOneFile(req.file as Express.MulterS3.File);
   news = await News.create({ title, contents, image: file, url });
 
   return res.status(201).json({
@@ -90,7 +90,7 @@ export const updateNews = async (
   } = { title, contents, url };
 
   if (req.file) {
-    const file = extractOneFile(req.file as Express.Multer.File);
+    const file = extractOneFile(req.file as Express.MulterS3.File);
     updateObject.image = file;
   }
 

@@ -11,24 +11,14 @@ import morgan from "morgan";
 import path from "path";
 
 import connect from "@/configs/db";
-// import connectRedis, { redisClient } from "@/configs/redis-connect";
 import HttpException from "@/libs/http-exception";
 import ErrorFilter from "@/middlewares/error.filter";
 import { authRouter, newsRouter, noticeRouter, searchRouter } from "@/routes";
-// import RedisStore from "connect-redis";
-
-// declare module "express-session" {
-//   interface SessionData {
-//     isValid: boolean;
-//     ip: string;
-//   }
-// }
+import upload from "./middlewares/multer";
 
 dotenv.config();
 
 const app: Express = express();
-
-// connectRedis();
 
 const isProd: boolean = process.env.NODE_ENV === "production";
 app.set("port", process.env.PORT || 8000);
@@ -62,23 +52,15 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(ExpressMongoSanitize());
-// app.use(cookieParser(process.env.COOKIE_SECRET || "null"));
-// app.use(
-//   expressSession({
-//     resave: false,
-//     saveUninitialized: false,
-//     name: process.env.COOKIE_NAME || "SSID",
-//     secret: process.env.COOKIE_SECRET || "secret",
-//     proxy: true,
-//     store: new RedisStore({ client: redisClient }),
-//     cookie: {
-//       httpOnly: true,
-//       maxAge: 1000 * 60 * 60 * 24 * 7,
-//       secure: isProd, // https -> true
-//       domain: isProd ? ".grinergy.tech" : undefined,
-//     },
-//   })
-// );
+
+app.post("/test", upload.single("image"), async (req, res, next) => {
+  try {
+    console.log(req.file);
+    res.status(200).json({ result: "ok" });
+  } catch (error) {
+    next(error);
+  }
+});
 
 app.use("/auth", authRouter);
 app.use("/notice", noticeRouter);

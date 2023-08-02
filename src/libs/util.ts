@@ -1,21 +1,21 @@
 import { File } from "@/types/file";
 import { Request } from "express";
 
-export const extractFiles = (multerFiles: Express.Multer.File[]) => {
+export const extractFiles = (multerFiles: Express.MulterS3.File[]) => {
   const extractedFiles = multerFiles.map(
-    (file: Express.Multer.File) =>
+    (file: Express.MulterS3.File) =>
       ({
-        filePath: file.path as string,
-        fileName: file.filename as string,
+        filePath: file.location as string,
+        fileName: file.originalname as string,
       } as File)
   );
   return extractedFiles;
 };
 
-export const extractOneFile = (multerFile: Express.Multer.File) => {
+export const extractOneFile = (multerFile: Express.MulterS3.File) => {
   return {
-    filePath: multerFile.path as string,
-    fileName: multerFile.filename as string,
+    filePath: multerFile.location as string,
+    fileName: multerFile.originalname as string,
   };
 };
 

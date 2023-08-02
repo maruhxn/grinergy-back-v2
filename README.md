@@ -12,8 +12,8 @@ GRINERGY SERVER v2
      -> Session을 하게 되면 loadbalancing이 어려움. 따로 redis를 두어야 하는데, 해봤자 10명정도 어드민 로그인을 할거 같은데 session으로 따로 레디스를 관리할 필요가 있을까?
      -> jwt 사용하면 프론트에서는 좀 귀찮겠지만, 따로 레디스 설정도 할 필요가 없으며, 성능도 더 좋을 듯. 추후에 Lambda로 백엔드를 전환하기에도 용이.
   1. 이미지 저장 시 리사이징
-  1. multer-s3 적용
-  1. search controller로 분리 및 pagination [ok]
+  1. multer-s3 적용 [OK]
+  1. search controller로 분리 및 pagination [OK]
 
 - ARCHITECTURE 변경사항
 
@@ -22,6 +22,8 @@ GRINERGY SERVER v2
   - FRONTEND: route53 -> cloudfront, ACM -> s3
   - BACKEND: lightsail? aws lambda(코드 다시 짜야함..)? beanstalk
   - DB: MongoDB Atlas
+
+  - lambda를 따로 두어 이미지 리사이징 작업을 수행? (메모리 많이 잡아먹어서)
 
   - aws shield, aws waf 등을 넣어야 할까? -> 보안이 중요한 웹은 아님.. 굳이 싶음.
 

@@ -170,14 +170,14 @@ describe("createNotice", () => {
     it("req.files가 있으면, files를 포함한 notice 1개 생성", async () => {
       (req.files = [
         {
-          path: "filePath1",
-          filename: "fileName1",
+          location: "filePath1",
+          originalname: "fileName1",
         },
         {
-          path: "filePath2",
-          filename: "fileName2",
+          location: "filePath2",
+          originalname: "fileName2",
         },
-      ] as Express.Multer.File[]),
+      ] as Express.MulterS3.File[]),
         (req.body = {
           title: "title",
           contents: "contents",
@@ -264,7 +264,7 @@ describe("updateNotice", () => {
             path: "addedFilePath2",
             filename: "addedFileName2",
           },
-        ] as Express.Multer.File[]),
+        ] as Express.MulterS3.File[]),
           (req.body = {
             title: "Updated Notice Title",
             contents: "Updated Notice Contents",
@@ -359,7 +359,7 @@ describe("updateNotice", () => {
             path: "addedFilePath2",
             filename: "addedFileName2",
           },
-        ] as Express.Multer.File[]),
+        ] as Express.MulterS3.File[]),
           (req.body = {
             title: "Updated Notice Title",
             contents: "Updated Notice Contents",

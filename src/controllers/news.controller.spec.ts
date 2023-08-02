@@ -165,9 +165,9 @@ describe("createNews", () => {
 
   it("올바른 body가 들어오면 news를 1개 생성.", async () => {
     (req.file = {
-      path: "Created FilePath",
-      filename: "Created FileName",
-    }),
+      location: "Created FilePath",
+      originalname: "Created FileName",
+    } as Express.MulterS3.File),
       (req.body = {
         title: "Created News Title",
         contents: "Created News Contents",
@@ -238,9 +238,9 @@ describe("updateNews", () => {
   describe("올바른 body가 들어왔을 때", () => {
     it("req.file이 있으면, news를 수정하고 기존 이미지 삭제.", async () => {
       (req.file = {
-        path: "Updated FilePath",
-        filename: "Updated FileName",
-      }),
+        location: "Updated FilePath",
+        originalname: "Updated FileName",
+      } as Express.MulterS3.File),
         (req.body = {
           title: "Updated News Title",
           contents: "Updated News Contents",
