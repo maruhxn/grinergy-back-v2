@@ -5,11 +5,14 @@
   "main": "src/app.ts",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && NODE_ENV=production PORT=80 pm2 start ./dist/app.js",
+    "start": "npm run build && NODE_ENV=production PORT=80 pm2 start pm2.config.js",
     "dev": "NODE_ENV=development nodemon",
     "prod": "npm run build && NODE_ENV=production node ./dist/app.js",
     "test": "jest",
     "coverage": "jest --coverage"
+  },
+  "_moduleAliases": {
+    "@": "dist"
   },
   "keywords": [
     "grinergy"

@@ -6,7 +6,6 @@ import ExpressMongoSanitize from "express-mongo-sanitize";
 import helmet from "helmet";
 import hpp from "hpp";
 import http from "http";
-import moduleAlias from "module-alias";
 import morgan from "morgan";
 import path from "path";
 
@@ -22,9 +21,9 @@ const app: Express = express();
 
 const isProd: boolean = process.env.NODE_ENV === "production";
 
-if (isProd) {
-  moduleAlias.addAliases({ "@": path.join(__dirname, "./dist") });
-}
+// if (isProd) {
+//   moduleAlias.addAliases({ : path.join(__dirname, ) });
+// }
 
 app.set("port", process.env.PORT || 8000);
 app.set("trust proxy", true);
