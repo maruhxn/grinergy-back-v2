@@ -20,19 +20,6 @@ const s3Config = new S3Client({
     secretAccessKey: process.env.S3_SECRET_ACCESS_KEY as string,
   },
 });
-// const storage = MulterS3.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, "uploads/");
-//   },
-//   filename: function (req, file, cb) {
-//     cb(null, `${Date.now()}_${file.originalname}`);
-//   },
-// });
-
-// const upload = multer({
-//   storage,
-//   limits: { fileSize: 5 * 1024 * 1024 },
-// });
 
 const upload = multer({
   storage: multerS3({
