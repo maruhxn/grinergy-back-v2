@@ -3,10 +3,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express, { Express, NextFunction, Request, Response } from "express";
 import ExpressMongoSanitize from "express-mongo-sanitize";
-// import expressSession from "express-session";
 import helmet from "helmet";
 import hpp from "hpp";
 import http from "http";
+import moduleAlias from "module-alias";
 import morgan from "morgan";
 import path from "path";
 
@@ -21,6 +21,11 @@ dotenv.config();
 const app: Express = express();
 
 const isProd: boolean = process.env.NODE_ENV === "production";
+
+if (isProd) {
+  moduleAlias.addAliases({ "@": path.join(__dirname, "./dist") });
+}
+
 app.set("port", process.env.PORT || 8000);
 app.set("trust proxy", true);
 

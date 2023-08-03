@@ -5,7 +5,7 @@
   "main": "src/app.ts",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node -r module-alias/register ./dist/app.js",
+    "start": "npm run build && NODE_ENV=production PORT=80 pm2 start ./dist/app.js",
     "dev": "NODE_ENV=development nodemon",
     "prod": "npm run build && NODE_ENV=production node ./dist/app.js",
     "test": "jest",
@@ -14,9 +14,6 @@
   "keywords": [
     "grinergy"
   ],
-  "_moduleAliases": {
-    "@": "./dist"
-  },
   "author": "maruhxn",
   "license": "MIT",
   "dependencies": {
@@ -37,6 +34,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "multer-s3": "^3.0.1",
+    "pm2": "^5.3.0",
     "winston": "^3.10.0",
     "winston-daily-rotate-file": "^4.7.1",
     "zod": "^3.21.4"
@@ -47,6 +45,7 @@
     "@babel/preset-typescript": "^7.22.5",
     "@types/compression": "^1.7.2",
     "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/express-session": "^1.17.7",
     "@types/hpp": "^0.2.2",
