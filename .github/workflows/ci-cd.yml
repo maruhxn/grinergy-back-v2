@@ -44,9 +44,9 @@ jobs:
           key: ${{ secrets.REMOTE_PRIVATE_KEY }} # ec2 instance pem key
           port: ${{ secrets.REMOTE_PORT }} # 접속포트
           script: | # 실행할 스크립트
-            sudo -s
             cd /home/ubuntu/grinergy-back-v2
-            git pull origin main
-            npx pm2 kill
-            npm i
-            npm run start
+            sudo git config --global --add safe.directory /home/ubuntu/grinergy-back-v2
+            sudo git pull origin main
+            sudo npx pm2 kill
+            sudo npm i
+            sudo npm run start
