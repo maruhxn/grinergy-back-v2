@@ -46,7 +46,7 @@ jobs:
           script: | # 실행할 스크립트
             sudo -s
             cd /home/ubuntu/grinergy-back-v2
-            git pull origin dev
-            pm2 kill
-            npm i --force
+            git pull origin main
+            npx pm2 kill
+            npm i
             npm run start
