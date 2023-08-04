@@ -21,10 +21,6 @@ const app: Express = express();
 
 const isProd: boolean = process.env.NODE_ENV === "production";
 
-// if (isProd) {
-//   moduleAlias.addAliases({ : path.join(__dirname, ) });
-// }
-
 app.set("port", process.env.PORT || 8000);
 app.set("trust proxy", true);
 
@@ -35,18 +31,14 @@ if (isProd) {
   app.use(morgan("combined"));
   app.use(
     cors({
-      origin: /grinergy\.tech$/,
+      // origin: /grinergy\.tech$/,
+      origin: "*",
       credentials: true,
     })
   );
 } else {
   app.use(morgan("dev"));
-  app.use(
-    cors({
-      origin: "http://localhost:3000",
-      credentials: true,
-    })
-  );
+  app.use(cors());
 }
 
 app.use(morgan("dev"));
