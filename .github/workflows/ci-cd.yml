@@ -7,7 +7,7 @@ on:
     branches: ["main"]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -32,6 +32,10 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run test
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
       - name: excuting remote ssh commands
         uses: appleboy/ssh-action@v1.0.0 # ssh 접속하는 오픈소스
         with:
