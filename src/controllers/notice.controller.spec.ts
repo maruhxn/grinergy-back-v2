@@ -552,7 +552,7 @@ describe("getNoticeStartWithQuery", () => {
       msg: "검색 결과",
       status: 200,
       data: {
-        searchedNotices,
+        notices: searchedNotices,
         total,
       },
     });

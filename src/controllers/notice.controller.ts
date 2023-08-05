@@ -8,7 +8,7 @@ import {
   UpdateNoticeValidator,
 } from "@/types/notice";
 import { TypedResponse } from "@/types/response";
-import { NextFunction, Request } from "express";
+import { NextFunction, Request, Response } from "express";
 import * as fs from "fs";
 import { HydratedDocument } from "mongoose";
 
@@ -176,7 +176,7 @@ export const deleteOneNotice = async (
 export const getNoticeStartWithQuery = async (
   req: Request,
   res: TypedResponse<{
-    searchedNotices: HydratedDocument<INotice>[];
+    notices: HydratedDocument<INotice>[];
     total: number;
   }>,
   next: NextFunction
@@ -205,8 +205,13 @@ export const getNoticeStartWithQuery = async (
     msg: "검색 결과",
     status: 200,
     data: {
-      searchedNotices,
+      notices: searchedNotices,
       total,
     },
   });
+};
+
+export const downloadFile = async (req: Request, res: Response) => {
+  const { filePath } = req.body;
+  return res.download(filePath);
 };

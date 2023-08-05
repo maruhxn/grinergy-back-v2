@@ -135,7 +135,7 @@ export const deleteOneNews = async (
 export const getNewsStartWithQuery = async (
   req: Request,
   res: TypedResponse<{
-    searchedNews: HydratedDocument<INews>[];
+    news: HydratedDocument<INews>[];
     total: number;
   }>,
   next: NextFunction
@@ -164,7 +164,7 @@ export const getNewsStartWithQuery = async (
     msg: "검색 결과",
     status: 200,
     data: {
-      searchedNews,
+      news: searchedNews,
       total,
     },
   });

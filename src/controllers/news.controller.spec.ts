@@ -441,7 +441,7 @@ describe("getNewsStartWithQuery", () => {
       msg: "검색 결과",
       status: 200,
       data: {
-        searchedNews,
+        news: searchedNews,
         total,
       },
     });
