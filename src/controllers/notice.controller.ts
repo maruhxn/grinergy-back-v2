@@ -46,7 +46,6 @@ export const getOneNotice = async (
 ) => {
   const { noticeId } = req.params;
   const notice = await Notice.findById(noticeId);
-  console.log(notice);
   if (!notice) throw new HttpException("공지사항 정보가 없습니다", 404);
 
   return res.status(200).json({
