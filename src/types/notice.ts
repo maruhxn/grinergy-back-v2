@@ -8,16 +8,14 @@ export const NoticeValidator = z.object({
 });
 
 export const CreateNoticeValidator = z.object({
-  title: z.string().min(1).max(100).optional(),
-  contents: z.string().min(1).optional(),
-  files: z.array(FileValidator).nullable().optional(),
+  title: z.string().min(1).max(100),
+  contents: z.string().min(1),
 });
 
 export const UpdateNoticeValidator = z.object({
   title: z.string().min(1).max(100).optional(),
   contents: z.string().min(1).optional(),
-  files: z.array(FileValidator).nullable().optional(),
-  deletedFiles: z.array(z.string()).optional(),
+  deletedFiles: z.union([z.array(z.string()), z.string()]).optional(),
 });
 
 export type Notice = z.infer<typeof NoticeValidator>;

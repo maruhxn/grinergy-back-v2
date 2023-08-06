@@ -1,14 +1,12 @@
+import CONFIGS from "@/configs/config";
 import HttpException from "@/libs/http-exception";
-import { extractOneFile } from "@/libs/util";
+import { deleteS3File, extractOneFile } from "@/libs/util";
 import News from "@/models/News";
-import { File } from "@/types/file";
-import { INews, NewsValidator, UpdateNewsValidator } from "@/types/news";
+import { File, FileValidator } from "@/types/file";
+import { CreateNewsValidator, INews, UpdateNewsValidator } from "@/types/news";
 import { TypedResponse } from "@/types/response";
 import { NextFunction, Request } from "express";
-import * as fs from "fs";
 import { HydratedDocument } from "mongoose";
-
-const pageSize = 10;
 
 export const getAllNews = async (
   req: Request,
@@ -18,12 +16,12 @@ export const getAllNews = async (
   const { page = 1 } = req.query;
   /* @ts-ignore */
   if (isNaN(page)) throw new HttpException("올바르지 않은 쿼리입니다.", 400);
-  const skipPage = (+page - 1) * pageSize;
+  const skipPage = (+page - 1) * CONFIGS.NEWS_PAGESIZE;
 
   const total = await News.count({});
   const news = await News.find({})
     .sort({ _id: -1 })
-    .limit(pageSize)
+    .limit(CONFIGS.NEWS_PAGESIZE)
     .skip(skipPage);
 
   return res.status(200).json({
@@ -59,13 +57,14 @@ export const createNews = async (
   res: TypedResponse<HydratedDocument<INews>>,
   next: NextFunction
 ) => {
-  const { title, contents, url } = NewsValidator.parse(req.body);
+  const { title, contents, url } = CreateNewsValidator.parse(req.body);
   let news: HydratedDocument<INews>;
 
   if (!req.file) throw new HttpException("이미지를 업로드 해주세요.", 400);
 
   const file = extractOneFile(req.file as Express.MulterS3.File);
-  news = await News.create({ title, contents, image: file, url });
+  const image = FileValidator.parse(file);
+  news = await News.create({ title, contents, image, url });
 
   return res.status(201).json({
     ok: true,
@@ -91,16 +90,15 @@ export const updateNews = async (
 
   if (req.file) {
     const file = extractOneFile(req.file as Express.MulterS3.File);
-    updateObject.image = file;
+    const image = FileValidator.parse(file);
+    updateObject.image = image;
   }
 
   const oldNews = await News.findByIdAndUpdate(newsId, updateObject);
 
   if (!oldNews) throw new HttpException("뉴스 정보가 없습니다", 404);
 
-  fs.unlink("uploads/" + oldNews.image.fileName, (err) => {
-    if (err) throw err;
-  });
+  if (updateObject.image) deleteS3File(oldNews.image.filePath);
 
   return res.status(201).json({
     ok: true,
@@ -120,9 +118,7 @@ export const deleteOneNews = async (
   if (!deletedNews) throw new HttpException("뉴스 정보가 없습니다", 404);
 
   /* File Deleting */
-  fs.unlink("uploads/" + deletedNews.image.fileName, (err) => {
-    if (err) throw err;
-  });
+  deleteS3File(deletedNews.image.filePath);
 
   return res.status(201).json({
     ok: true,
@@ -144,7 +140,7 @@ export const getNewsStartWithQuery = async (
   /* @ts-ignore */
   if (isNaN(page)) throw new HttpException("올바르지 않은 쿼리입니다.", 400);
   if (!q) throw new HttpException("검색어를 입력해주세요", 400);
-  const skipPage = (+page - 1) * pageSize;
+  const skipPage = (+page - 1) * CONFIGS.NEWS_PAGESIZE;
   const regex = new RegExp(`^${q}`, "i");
 
   const searchQuery = {
@@ -156,7 +152,7 @@ export const getNewsStartWithQuery = async (
   const total = await News.countDocuments(searchQuery);
   const searchedNews = await News.find(searchQuery)
     .sort({ _id: -1 })
-    .limit(pageSize)
+    .limit(CONFIGS.NEWS_PAGESIZE)
     .skip(skipPage);
 
   return res.status(200).json({

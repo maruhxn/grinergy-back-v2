@@ -8,8 +8,13 @@ export const NewsValidator = z.object({
   url: z.string().min(1),
 });
 
+export const CreateNewsValidator = z.object({
+  title: z.string().min(1).max(100),
+  contents: z.string().min(1),
+  url: z.string().min(1),
+});
+
 export const UpdateNewsValidator = z.object({
-  image: FileValidator.optional(),
   title: z.string().min(1).max(100).optional(),
   contents: z.string().min(1).optional(),
   url: z.string().min(1).optional(),

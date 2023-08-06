@@ -1,18 +1,16 @@
+import CONFIGS from "@/configs/config";
 import HttpException from "@/libs/http-exception";
-import { extractFiles } from "@/libs/util";
+import { deleteS3File, extractFiles } from "@/libs/util";
 import Notice from "@/models/Notice";
 import { File } from "@/types/file";
 import {
+  CreateNoticeValidator,
   INotice,
-  NoticeValidator,
   UpdateNoticeValidator,
 } from "@/types/notice";
 import { TypedResponse } from "@/types/response";
-import { NextFunction, Request, Response } from "express";
-import * as fs from "fs";
+import { NextFunction, Request } from "express";
 import { HydratedDocument } from "mongoose";
-
-const pageSize = 10;
 
 export const getAllNotice = async (
   req: Request,
@@ -22,12 +20,12 @@ export const getAllNotice = async (
   const { page = 1 } = req.query;
   /* @ts-ignore */
   if (isNaN(page)) throw new HttpException("올바르지 않은 쿼리입니다.", 400);
-  const skipPage = (+page - 1) * pageSize;
+  const skipPage = (+page - 1) * CONFIGS.NOTICE_PAGESIZE;
 
   const total = await Notice.countDocuments({});
   const notices = await Notice.find({})
     .sort({ _id: -1 })
-    .limit(pageSize)
+    .limit(CONFIGS.NOTICE_PAGESIZE)
     .skip(skipPage);
 
   return res.status(200).json({
@@ -48,6 +46,7 @@ export const getOneNotice = async (
 ) => {
   const { noticeId } = req.params;
   const notice = await Notice.findById(noticeId);
+  console.log(notice);
   if (!notice) throw new HttpException("공지사항 정보가 없습니다", 404);
 
   return res.status(200).json({
@@ -63,7 +62,7 @@ export const createNotice = async (
   res: TypedResponse<HydratedDocument<INotice>>,
   next: NextFunction
 ) => {
-  const { title, contents } = NoticeValidator.parse(req.body);
+  const { title, contents } = CreateNoticeValidator.parse(req.body);
   let notice: HydratedDocument<INotice>;
 
   if (req.files) {
@@ -102,6 +101,7 @@ export const updateNotice = async (
   const { title, contents, deletedFiles } = UpdateNoticeValidator.parse(
     req.body
   );
+
   const { noticeId } = req.params;
   const files: File[] = req.files
     ? extractFiles(req.files as Express.MulterS3.File[])
@@ -113,17 +113,20 @@ export const updateNotice = async (
       {
         $pull: {
           files: {
-            fileName: { $in: deletedFiles },
+            filePath: { $in: deletedFiles },
           },
         },
       },
       { new: true }
     );
-    deletedFiles.forEach((deletedFileName) => {
-      fs.unlink("uploads/" + deletedFileName, (err) => {
-        if (err) throw err;
+
+    if (!Array.isArray(deletedFiles)) {
+      deleteS3File(deletedFiles);
+    } else {
+      deletedFiles.forEach(async (deletedFilePath) => {
+        deleteS3File(deletedFilePath);
       });
-    });
+    }
   }
 
   const updatedNotice = await Notice.findByIdAndUpdate(
@@ -159,11 +162,9 @@ export const deleteOneNotice = async (
   if (!deletedNotice) throw new HttpException("공지사항 정보가 없습니다", 404);
 
   /* File Deleting */
-  deletedNotice?.files?.forEach((deletedFile) => {
-    fs.unlink("uploads/" + deletedFile.fileName, (err) => {
-      if (err) throw err;
-    });
-  });
+  deletedNotice?.files?.forEach(async (deletedFile) =>
+    deleteS3File(deletedFile.filePath)
+  );
 
   return res.status(201).json({
     ok: true,
@@ -185,7 +186,7 @@ export const getNoticeStartWithQuery = async (
   /* @ts-ignore */
   if (isNaN(page)) throw new HttpException("올바르지 않은 쿼리입니다.", 400);
   if (!q) throw new HttpException("검색어를 입력해주세요", 400);
-  const skipPage = (+page - 1) * pageSize;
+  const skipPage = (+page - 1) * CONFIGS.NOTICE_PAGESIZE;
   const regex = new RegExp(`^${q}`, "i");
 
   const searchQuery = {
@@ -197,7 +198,7 @@ export const getNoticeStartWithQuery = async (
   const total = await Notice.countDocuments(searchQuery);
   const searchedNotices = await Notice.find(searchQuery)
     .sort({ _id: -1 })
-    .limit(pageSize)
+    .limit(CONFIGS.NOTICE_PAGESIZE)
     .skip(skipPage);
 
   return res.status(200).json({
@@ -209,9 +210,4 @@ export const getNoticeStartWithQuery = async (
       total,
     },
   });
-};
-
-export const downloadFile = async (req: Request, res: Response) => {
-  const { filePath } = req.body;
-  return res.download(filePath);
 };

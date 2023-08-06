@@ -1,7 +1,6 @@
 import {
   createNotice,
   deleteOneNotice,
-  downloadFile,
   getAllNotice,
   getOneNotice,
   updateNotice,
@@ -17,8 +16,6 @@ router
   .route("/")
   .get(catchAsync(getAllNotice))
   .post(isLoggedIn, upload.array("files"), catchAsync(createNotice));
-
-router.post("/downloadFile", downloadFile);
 
 router
   .route("/:noticeId")

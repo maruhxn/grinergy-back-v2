@@ -1,7 +1,8 @@
+import CONFIGS from "@/configs/config";
 import HttpException from "@/libs/http-exception";
+import * as util from "@/libs/util";
 import Notice from "@/models/Notice";
 import { NextFunction } from "express";
-import * as fs from "fs";
 import { z } from "zod";
 import {
   createNotice,
@@ -13,14 +14,13 @@ import {
 } from "./notice.controller";
 
 let req: any, res: any, next: NextFunction, mockNoticeData: any[];
-
-jest.mock("fs", () => ({
-  unlink: jest.fn(),
-}));
+let mockExtractFiles: any, mockDeleteS3File: any;
 
 const total = 12;
 
 beforeEach(() => {
+  mockDeleteS3File = jest.spyOn(util, "deleteS3File");
+  mockExtractFiles = jest.spyOn(util, "extractFiles");
   req = {
     query: {
       page: 1,
@@ -60,10 +60,10 @@ describe("getAllNotice", () => {
     .spyOn(Notice, "countDocuments")
     .mockResolvedValue(total);
 
-  it("요청이 들어오면 Notice 배열(최대 10개)을 반환해야 한다.", async () => {
+  it("요청이 들어오면 Notice 배열을 반환해야 한다.", async () => {
     req.query = { page: "1" };
 
-    const results = mockNoticeData.slice(0, 10);
+    const results = mockNoticeData.slice(0, CONFIGS.NOTICE_PAGESIZE);
 
     mockFindAll.mockReturnValue({
       sort: jest.fn().mockReturnValue({
@@ -89,7 +89,7 @@ describe("getAllNotice", () => {
     });
     expect(mockCount).toBeCalledTimes(1);
     expect(mockFindAll).toBeCalledTimes(1);
-    expect(results.length).toBeLessThanOrEqual(10);
+    expect(results.length).toBeLessThanOrEqual(CONFIGS.NOTICE_PAGESIZE);
   });
 
   it("잘못된 query가 주어지면 400 error 반환", async () => {
@@ -161,6 +161,7 @@ describe("createNotice", () => {
     } catch (err: any) {
       expect(res.status).not.toHaveBeenCalled();
       expect(res.json).not.toHaveBeenCalled();
+      expect(mockExtractFiles).not.toBeCalled();
       expect(mockCreate).not.toHaveBeenCalled();
       expect(err).toBeInstanceOf(z.ZodError);
     }
@@ -194,6 +195,8 @@ describe("createNotice", () => {
         status: 201,
         data: mockNoticeData[mockNoticeData.length - 1],
       });
+      expect(mockExtractFiles).toBeCalledTimes(1);
+      expect(mockExtractFiles).toBeCalledWith(req.files);
       expect(mockNoticeData[mockNoticeData.length - 1]).toEqual(
         expect.objectContaining({
           files: [
@@ -227,6 +230,7 @@ describe("createNotice", () => {
         status: 201,
         data: mockNoticeData[mockNoticeData.length - 1],
       });
+      expect(mockExtractFiles).not.toBeCalled();
       expect(mockNoticeData[mockNoticeData.length - 1].files).toBeUndefined();
     });
   });
@@ -253,7 +257,7 @@ describe("updateNotice", () => {
   });
   describe("올바른 body가 들어왔을 때, ", () => {
     describe("deletedFiles가 있고,", () => {
-      it("req.files가 있으면, deletedFiles의 원소와 일치하는 fileName를 갖는 file을 삭제 후, 새로운 files를 포함하는 update된 object를 반환.", async () => {
+      it("req.files가 있으면, deletedFiles의 원소와 일치하는 filePath을 갖는 file을 삭제 후, 새로운 files를 포함하는 update된 object를 반환.", async () => {
         const { noticeId } = req.params;
         (req.files = [
           {
@@ -268,7 +272,7 @@ describe("updateNotice", () => {
           (req.body = {
             title: "Updated Notice Title",
             contents: "Updated Notice Contents",
-            deletedFiles: [`fileName ${noticeId}`],
+            deletedFiles: ["filePath1", "filePath2"],
           });
 
         const updatedNotice = {
@@ -299,22 +303,18 @@ describe("updateNotice", () => {
           status: 201,
           data: updatedNotice,
         });
-        expect(fs.unlink).toBeCalledTimes(req.body.deletedFiles.length);
-        req.body.deletedFiles.forEach((deletedFileName: string) => {
-          expect(fs.unlink).toHaveBeenCalledWith(
-            `uploads/${deletedFileName}`,
-            expect.any(Function)
-          );
-        });
+        expect(mockExtractFiles).toBeCalledTimes(1);
+        expect(mockExtractFiles).toBeCalledWith(req.files);
+        expect(mockDeleteS3File).toBeCalledTimes(req.files.length);
         expect(mockUpdate).toBeCalledTimes(2);
       });
 
-      it("req.files가 없으면, deletedFiles의 원소와 일치하는 fileName를 갖는 file들이 삭제 된 object를 반환.", async () => {
+      it("req.files가 없으면, deletedFiles의 원소와 일치하는 filePath를 갖는 file들이 삭제 된 object를 반환.", async () => {
         const { noticeId } = req.params;
         req.body = {
           title: "Updated Notice Title",
           contents: "Updated Notice Contents",
-          deletedFiles: [`fileName ${noticeId}`],
+          deletedFiles: ["filePath1", "filePath2"],
         };
         const updatedNotice = {
           _id: noticeId,
@@ -336,14 +336,9 @@ describe("updateNotice", () => {
           status: 201,
           data: updatedNotice,
         });
-        expect(fs.unlink).toBeCalledTimes(req.body.deletedFiles.length);
-        req.body.deletedFiles.forEach((deletedFileName: string) => {
-          expect(fs.unlink).toHaveBeenCalledWith(
-            `uploads/${deletedFileName}`,
-            expect.any(Function)
-          );
-        });
-        expect(mockUpdate.mock.calls).toHaveLength(2);
+        expect(mockExtractFiles).not.toBeCalled();
+        expect(mockDeleteS3File).toBeCalledTimes(req.body.deletedFiles.length);
+        expect(mockUpdate).toBeCalledTimes(2);
       });
     });
 
@@ -371,8 +366,8 @@ describe("updateNotice", () => {
           contents: req.body.contents,
           files: [
             {
-              filePath: "filePath " + noticeId,
-              fileName: "fileName " + noticeId,
+              filePath: "filePath1",
+              fileName: "fileName1",
             },
             {
               filePath: "addedfilePath1",
@@ -398,6 +393,9 @@ describe("updateNotice", () => {
           status: 201,
           data: updatedNotice,
         });
+        expect(mockExtractFiles).toBeCalledTimes(1);
+        expect(mockExtractFiles).toBeCalledWith(req.files);
+        expect(mockDeleteS3File).not.toBeCalled();
         expect(mockUpdate.mock.calls).toHaveLength(1);
       });
 
@@ -431,6 +429,8 @@ describe("updateNotice", () => {
           status: 201,
           data: updatedNotice,
         });
+        expect(mockExtractFiles).not.toBeCalled();
+        expect(mockDeleteS3File).not.toBeCalled();
         expect(mockUpdate.mock.calls).toHaveLength(1);
       });
     });
@@ -450,8 +450,9 @@ describe("updateNotice", () => {
       expect(res.json).not.toHaveBeenCalled();
       expect(err).toBeInstanceOf(HttpException);
       expect(err.status).toBe(404);
+      expect(mockExtractFiles).not.toBeCalled();
+      expect(mockDeleteS3File).not.toBeCalled();
       expect(mockUpdate).toBeCalledTimes(1);
-      expect(fs.unlink).not.toBeCalled();
     }
   });
 });
@@ -467,8 +468,8 @@ describe("deleteNotice", () => {
       contents: "Deleted Notice Contents",
       files: [
         {
-          filePath: `filePath ${noticeId}`,
-          fileName: `fileName ${noticeId}`,
+          filePath: `filePath1`,
+          fileName: `fileName1`,
         },
       ],
     };
@@ -480,13 +481,7 @@ describe("deleteNotice", () => {
     expect(res.status).toBeCalledWith(201);
     expect(mockDelete).toBeCalledTimes(1);
     expect(mockDelete).toBeCalledWith(noticeId);
-    expect(fs.unlink).toHaveBeenCalledTimes(deletedNotice.files.length);
-    deletedNotice.files.forEach((deletedFile) => {
-      expect(fs.unlink).toHaveBeenCalledWith(
-        `uploads/${deletedFile.fileName}`,
-        expect.any(Function)
-      );
-    });
+    expect(mockDeleteS3File).toBeCalledTimes(deletedNotice.files.length);
     expect(res.json).toBeCalledWith({
       ok: true,
       msg: `공지사항-(${noticeId}) 삭제`,
@@ -504,8 +499,8 @@ describe("deleteNotice", () => {
       expect(res.json).not.toHaveBeenCalled();
       expect(err).toBeInstanceOf(HttpException);
       expect(err.status).toBe(404);
+      expect(mockDeleteS3File).not.toBeCalled();
       expect(mockDelete).toBeCalledWith(req.params.noticeId);
-      expect(fs.unlink).not.toHaveBeenCalled();
     }
   });
 });
@@ -515,7 +510,7 @@ describe("getNoticeStartWithQuery", () => {
   const mockCount = jest
     .spyOn(Notice, "countDocuments")
     .mockResolvedValue(total);
-  it("올바른 q 및 page가 들어오면, 해당 쿼리로 시작하는 notices(최대 10개)와 전체 notice 개수를 반환", async () => {
+  it("올바른 q 및 page가 들어오면, 해당 쿼리로 시작하는 notices와 전체 notice 개수를 반환", async () => {
     req.query = {
       q: "Search Query",
       page: "1",
@@ -558,7 +553,7 @@ describe("getNoticeStartWithQuery", () => {
     });
     expect(mockCount).toBeCalledTimes(1);
     expect(mockFind).toBeCalledTimes(1);
-    expect(searchedNotices.length).toBeLessThanOrEqual(10);
+    expect(searchedNotices.length).toBeLessThanOrEqual(CONFIGS.NOTICE_PAGESIZE);
   });
 
   it("잘못된 query가 주어지면 400 error 반환", async () => {

@@ -1,7 +1,8 @@
+import CONFIGS from "@/configs/config";
 import HttpException from "@/libs/http-exception";
+import * as util from "@/libs/util";
 import News from "@/models/News";
 import { NextFunction } from "express";
-import * as fs from "fs";
 import { z } from "zod";
 import {
   createNews,
@@ -13,14 +14,13 @@ import {
 } from "./news.controller";
 
 let req: any, res: any, next: NextFunction, mockNewsData: any[];
-
-jest.mock("fs", () => ({
-  unlink: jest.fn(),
-}));
+let mockExtractOneFile: any, mockDeleteS3File: any;
 
 const total = 12;
 
 beforeEach(() => {
+  mockDeleteS3File = jest.spyOn(util, "deleteS3File");
+  mockExtractOneFile = jest.spyOn(util, "extractOneFile");
   mockNewsData = [];
   req = {
     query: {
@@ -60,10 +60,10 @@ describe("getAllNews", () => {
   const mockFindAll = jest.spyOn(News, "find");
   const mockCount = jest.spyOn(News, "count").mockResolvedValue(total);
 
-  it("요청이 들어오면 News 배열(최대 10개)을 반환해야 한다.", async () => {
+  it("요청이 들어오면 News 배열을 반환해야 한다.", async () => {
     req.query = { page: "1" };
 
-    const results = mockNewsData.slice(0, 10);
+    const results = mockNewsData.slice(0, CONFIGS.NEWS_PAGESIZE);
 
     mockFindAll.mockReturnValue({
       sort: jest.fn().mockReturnValue({
@@ -88,7 +88,7 @@ describe("getAllNews", () => {
     });
     expect(mockCount).toBeCalledTimes(1);
     expect(mockFindAll).toBeCalledTimes(1);
-    expect(results.length).toBeLessThanOrEqual(10);
+    expect(results.length).toBeLessThanOrEqual(CONFIGS.NEWS_PAGESIZE);
   });
 
   it("잘못된 query가 주어지면 400 error 반환", async () => {
@@ -195,6 +195,8 @@ describe("createNews", () => {
     expect(res.status).toBeCalledTimes(1);
     expect(res.json).toBeCalledTimes(1);
     expect(res.status).toBeCalledWith(201);
+    expect(mockExtractOneFile).toBeCalledTimes(1);
+    expect(mockExtractOneFile).toBeCalledWith(req.file);
     expect(mockCreate).toBeCalledTimes(1);
     expect(mockCreate).toBeCalledWith({
       image: {
@@ -260,13 +262,13 @@ describe("updateNews", () => {
       mockUpdate.mockResolvedValue(oldNews);
 
       const updateObject = {
+        title: req.body.title,
+        contents: req.body.contents,
+        url: req.body.url,
         image: {
           filePath: "Updated FilePath",
           fileName: "Updated FileName",
         },
-        title: req.body.title,
-        contents: req.body.contents,
-        url: req.body.url,
       };
 
       const { newsId } = req.params;
@@ -281,13 +283,12 @@ describe("updateNews", () => {
         msg: `뉴스-(${newsId}) 수정`,
         status: 201,
       });
+      expect(mockExtractOneFile).toBeCalledTimes(1);
+      expect(mockExtractOneFile).toBeCalledWith(req.file);
+      expect(mockDeleteS3File).toBeCalledTimes(1);
+      expect(mockDeleteS3File).toBeCalledWith(oldNews.image.filePath);
       expect(mockUpdate).toBeCalledTimes(1);
       expect(mockUpdate).toBeCalledWith(newsId, updateObject);
-      expect(fs.unlink).toBeCalledTimes(1);
-      expect(fs.unlink).toHaveBeenCalledWith(
-        `uploads/${oldNews.image.fileName}`,
-        expect.any(Function)
-      );
     });
     it("req.file이 없으면, title, contents, url만을 가지고 news를 수정.", async () => {
       req.body = {
@@ -325,6 +326,8 @@ describe("updateNews", () => {
         msg: `뉴스-(${newsId}) 수정`,
         status: 201,
       });
+      expect(mockExtractOneFile).not.toBeCalled();
+      expect(mockDeleteS3File).not.toBeCalled();
       expect(mockUpdate).toBeCalledTimes(1);
       expect(mockUpdate).toBeCalledWith(newsId, updateObject);
     });
@@ -346,8 +349,9 @@ describe("updateNews", () => {
       expect(res.json).not.toHaveBeenCalled();
       expect(err).toBeInstanceOf(HttpException);
       expect(err.status).toBe(404);
+      expect(mockExtractOneFile).not.toBeCalled();
+      expect(mockDeleteS3File).not.toBeCalled();
       expect(mockUpdate).toBeCalledTimes(1);
-      expect(fs.unlink).not.toBeCalled();
     }
   });
 });
@@ -371,13 +375,10 @@ describe("deleteNews", () => {
     expect(res.status).toBeCalledTimes(1);
     expect(res.json).toBeCalledTimes(1);
     expect(res.status).toBeCalledWith(201);
+    expect(mockDeleteS3File).toBeCalledTimes(1);
+    expect(mockDeleteS3File).toBeCalledWith(deletedNews.image.filePath);
     expect(mockDelete).toBeCalledTimes(1);
     expect(mockDelete).toBeCalledWith(newsId);
-    expect(fs.unlink).toHaveBeenCalledTimes(1);
-    expect(fs.unlink).toHaveBeenCalledWith(
-      `uploads/${deletedNews.image.fileName}`,
-      expect.any(Function)
-    );
     expect(res.json).toBeCalledWith({
       ok: true,
       msg: `뉴스-(${newsId}) 삭제`,
@@ -395,8 +396,9 @@ describe("deleteNews", () => {
       expect(res.json).not.toHaveBeenCalled();
       expect(err).toBeInstanceOf(HttpException);
       expect(err.status).toBe(404);
+      expect(mockExtractOneFile).not.toBeCalled();
+      expect(mockDeleteS3File).not.toBeCalled();
       expect(mockDelete).toBeCalledWith(req.params.newsId);
-      expect(fs.unlink).not.toHaveBeenCalled();
     }
   });
 });
@@ -404,7 +406,7 @@ describe("deleteNews", () => {
 describe("getNewsStartWithQuery", () => {
   const mockFind = jest.spyOn(News, "find");
   const mockCount = jest.spyOn(News, "countDocuments").mockResolvedValue(total);
-  it("올바른 q 및 page가 들어오면, 해당 쿼리로 시작하는 news(최대 10개)와 전체 news 개수를 반환", async () => {
+  it("올바른 q 및 page가 들어오면, 해당 쿼리로 시작하는 news와 전체 news 개수를 반환", async () => {
     req.query = {
       q: "Search Query",
       page: "1",
@@ -447,7 +449,7 @@ describe("getNewsStartWithQuery", () => {
     });
     expect(mockCount).toBeCalledTimes(1);
     expect(mockFind).toBeCalledTimes(1);
-    expect(searchedNews.length).toBeLessThanOrEqual(10);
+    expect(searchedNews.length).toBeLessThanOrEqual(CONFIGS.NEWS_PAGESIZE);
   });
 
   it("잘못된 query가 주어지면 400 error 반환", async () => {

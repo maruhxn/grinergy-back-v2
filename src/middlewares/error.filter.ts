@@ -16,25 +16,25 @@ const ErrorFilter = (
     return res.status(status).json({
       ok: false,
       status,
-      message,
+      msg: message,
     });
   } else if (err instanceof MulterError) {
     return res.status(400).json({
       ok: false,
       status: 400,
-      message: "파일 용량이 너무 큽니다",
+      msg: "파일 용량이 너무 큽니다",
     });
   } else if (err instanceof z.ZodError) {
     return res.status(422).json({
       ok: false,
       status: 422,
-      message: err.message,
+      msg: err.message,
     });
   } else {
     return res.status(422).json({
       ok: false,
       status: 422,
-      message: "잘못된 접근입니다.",
+      msg: "잘못된 접근입니다.",
     });
   }
 };
